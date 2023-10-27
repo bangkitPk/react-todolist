@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import InputTodo from "./components/input-todo";
+import ListTodo from "./components/list-todo";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className="text-3xl font-bold underline text-red-600 hover:text-5xl transition-all">
-      Hello world!
-    </h1>
-    </>
-  )
+    <div className="flex flex-col items-center pt-5">
+      <div className="flex flex-col items-center">
+        <h1 className="text-4xl font-bold text-zinc-800 mb-20">
+          What's the plan for today?
+        </h1>
+        <InputTodo />
+        <ListTodo />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
