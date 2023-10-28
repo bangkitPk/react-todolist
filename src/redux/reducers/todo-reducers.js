@@ -34,3 +34,8 @@ export const addTodo = (newTodo) => async (dispatch) => {
 
   dispatch(getTodo())
 }
+
+export const deleteTodo = (deleteTodoId) => async (dispatch) => {
+    await axios.delete(`https://6524c553ea560a22a4ea1537.mockapi.io/todo/${deleteTodoId}`)
+    dispatch(getTodo())
+}
