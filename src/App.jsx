@@ -1,5 +1,5 @@
 import InputTodo from "./components/input-todo";
-import ListTodo from "./components/list-todo";
+import ListTodos from "./components/list-todos";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
           What's the plan for today?
         </h1>
         <InputTodo />
-        <ListTodo />
+        <ListTodos />
       </div>
     </div>
   );
