@@ -21,6 +21,7 @@ export default function ListTodos() {
       </div>
       <div>
         {
+          todos.length == 0 ? <p className="mt-5">There's no to-do list yet.</p> :
           todos.map(todo => (<Todo key={todo.id} todo={todo} />))
         }
       </div>
