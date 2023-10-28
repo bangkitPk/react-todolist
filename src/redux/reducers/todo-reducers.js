@@ -28,3 +28,9 @@ function successGetTodo(data) {
         payload: data
     }
 }
+
+export const addTodo = (newTodo) => async (dispatch) => {
+  await axios.post("https://6524c553ea560a22a4ea1537.mockapi.io/todo", newTodo)
+
+  dispatch(getTodo())
+}
