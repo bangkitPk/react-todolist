@@ -19,7 +19,7 @@ export default function Todo({ todo }) {
   return (
     <div className="px-4 py-3 mt-5 flex items-center border-2 border-gray-300 rounded-sm gap-3">
       <button
-        className="border-2 border-gray-300 rounded-sm h-10 w-10"
+        className="border-2 border-gray-300 rounded-sm h-10 w-10 hover:bg-gray-300 duration-300"
         onClick={handleUpdateStatus}
       >
         {todo.status ? "✔️" : ""}
