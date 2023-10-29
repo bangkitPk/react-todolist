@@ -49,6 +49,11 @@ export const updateTodoStatus = (todoId, updatedTodo) => async (dispatch) => {
   await axios.put(`https://6524c553ea560a22a4ea1537.mockapi.io/todo/${todoId}`, updatedTodo);
   dispatch(getTodo());
 };
+
+export const editTodoValue = (todoId, newTodoValue) => async (dispatch) => {
+  await axios.put(`https://6524c553ea560a22a4ea1537.mockapi.io/todo/${todoId}`, newTodoValue);
+  dispatch(getTodo());
+}
 // export const updateTodoStatus = (todoId, newStatus) => {
 //   return {
 //     type: "UPDATE_TODO_STATUS",

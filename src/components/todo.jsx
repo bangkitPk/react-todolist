@@ -1,15 +1,21 @@
 import { useDispatch } from "react-redux";
 import { deleteTodo, updateTodoStatus } from "../redux/reducers/todo-reducers";
 import { PropTypes } from "prop-types";
+import EditModal from "./edit-modal";
+import { useState } from "react";
 
 export default function Todo({ todo }) {
+  const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
-  const handledelete = (e) => {
-    e.preventDefault;
+  const handledelete = () => {
     dispatch(deleteTodo(todo.id));
   };
 
-  const handleUpdateStatus = () => {
+  const handleEdit = () => {
+    setOpenModal(true)
+  }
+
+  const updateStatus = () => {
     const updatedTodo = {
       ...todo,
       status: !todo.status
@@ -21,7 +27,7 @@ export default function Todo({ todo }) {
     <div className="px-4 py-3 mt-5 flex items-center border-2 border-gray-300 rounded-sm gap-3">
       <button
         className="border-2 border-gray-300 rounded-sm h-10 w-10 hover:bg-gray-300 duration-300"
-        onClick={handleUpdateStatus}
+        onClick={updateStatus}
       >
         {todo.status ? "✔️" : ""}
       </button>
@@ -45,7 +51,7 @@ export default function Todo({ todo }) {
           <span className="text-lg">{todo.value}</span>
           <div>
             <button className="mr-2">
-              <img src="./src/assets/edit.png" alt="Edit" width={30} />
+              <img src="./src/assets/edit.png" alt="Edit" width={30} onClick={handleEdit}/>
             </button>
             <button>
               <img
@@ -58,6 +64,8 @@ export default function Todo({ todo }) {
           </div>
         </div>
       )}
+
+      {openModal && <EditModal setOpenModal={setOpenModal} todo={todo}/>}
     </div>
   );
 }
