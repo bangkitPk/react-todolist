@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { deleteTodo, updateTodoStatus } from "../redux/reducers/todo-reducers";
+import { PropTypes } from "prop-types";
 
 export default function Todo({ todo }) {
   const dispatch = useDispatch();
@@ -59,4 +60,9 @@ export default function Todo({ todo }) {
       )}
     </div>
   );
+}
+
+
+Todo.propTypes = {
+  todo: PropTypes.object,
 }

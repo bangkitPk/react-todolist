@@ -1,3 +1,5 @@
+import { PropTypes } from "prop-types";
+
 export default function FilterButton({ text, selectedFilter, onClick }) {
   let isActive = text == selectedFilter;
 
@@ -11,4 +13,10 @@ export default function FilterButton({ text, selectedFilter, onClick }) {
       {text}
     </button>
   );
+}
+
+FilterButton.propTypes = {
+  text: PropTypes.string,
+  selectedFilter: PropTypes.string,
+  onClick: PropTypes.func,
 }
