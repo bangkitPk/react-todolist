@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import FilterButton from "./filter-button";
-import { getTodo } from "../redux/reducers/todo-reducers";
 import { useEffect, useState } from "react";
 import Todo from "./todo";
+import { getTodo } from "../redux/actions/todo-actions";
 
 export default function ListTodos() {
   const dispatch = useDispatch();

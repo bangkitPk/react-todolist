@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import { deleteTodo, updateTodoStatus } from "../redux/reducers/todo-reducers";
 import { PropTypes } from "prop-types";
 import EditModal from "./edit-modal";
 import { useState } from "react";
+import { deleteTodo, updateTodoStatus } from "../redux/actions/todo-actions";
 
 export default function Todo({ todo }) {
   const [openModal, setOpenModal] = useState(false);

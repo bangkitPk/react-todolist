@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { editTodoValue } from "../redux/reducers/todo-reducers";
 import { useDispatch } from "react-redux";
+import { editTodoValue } from "../redux/actions/todo-actions";
 
 export default function EditModal({ setOpenModal, todo }) {
   const [editedTodo, setEditedTodo] = useState(todo.value);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../redux/reducers/todo-reducers";
+import { addTodo } from "../redux/actions/todo-actions";
 
 export default function InputTodo() {
   const [input, setInput] = useState("");
