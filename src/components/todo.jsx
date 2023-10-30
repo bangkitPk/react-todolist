@@ -3,6 +3,8 @@ import { PropTypes } from "prop-types";
 import EditModal from "./edit-modal";
 import { useState } from "react";
 import { deleteTodo, updateTodoStatus } from "../redux/actions/todo-actions";
+import editImg from "../assets/edit.png";
+import deleteImg from "../assets/delete.png"
 
 export default function Todo({ todo }) {
   const [openModal, setOpenModal] = useState(false);
@@ -39,7 +41,7 @@ export default function Todo({ todo }) {
           </span>
           <button>
               <img
-                src="./src/assets/delete.png"
+                src={deleteImg}
                 alt="Delete"
                 width={30}
                 onClick={handledelete}
@@ -51,7 +53,7 @@ export default function Todo({ todo }) {
           <span className="text-lg">{todo.value}</span>
           <div>
             <button className="mr-2">
-              <img src="./src/assets/edit.png" alt="Edit" width={30} onClick={handleEdit}/>
+              <img src={editImg} alt="Edit" width={30} onClick={handleEdit}/>
             </button>
             <button>
               <img
