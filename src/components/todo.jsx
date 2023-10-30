@@ -33,7 +33,7 @@ export default function Todo({ todo }) {
       >
         {todo.status ? "✔️" : ""}
       </button>
-      {todo.status == true ? (
+      {todo.status ? (
         <div className="flex items-center justify-between w-[100%]">
           <span className="text-lg relative w-5/6">
             <span className="absolute top-1/2 left-0 w-full h-[2px] bg-slate-800"></span>
@@ -57,7 +57,7 @@ export default function Todo({ todo }) {
             </button>
             <button>
               <img
-                src="./src/assets/delete.png"
+                src={deleteImg}
                 alt="Delete"
                 width={30}
                 onClick={handledelete}
